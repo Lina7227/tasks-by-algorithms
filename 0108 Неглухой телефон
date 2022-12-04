@@ -1,0 +1,3 @@
+fs = require('fs');
+input = fs.readFileSync('input.txt', 'binary');
+fs.writeFileSync('output.txt', input);
