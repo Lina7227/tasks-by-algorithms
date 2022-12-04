@@ -13,6 +13,6 @@ y = Fn-1(Fn-2(…F2(F1(x))))
 
 В выходной файл OUTPUT.TXT нужно вывести в точности то же число, которое задано во входном файле. 
 
-fs = require('fs');
-input = fs.readFileSync('input.txt', 'binary');
+const fs = require('fs');
+const input = fs.readFileSync('input.txt', 'binary');
 fs.writeFileSync('output.txt', input);
