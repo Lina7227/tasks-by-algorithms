@@ -1,0 +1,28 @@
+Время года
+(Время: 1 сек. Память: 16 Мб Сложность: 10%)
+
+По заданному номеру месяца в году требуется определить время года.
+Входные данные
+
+Входной файл INPUT.TXT содержит натуральное число N (N≤100) – номер месяца.
+Выходные данные
+
+В выходной файл OUTPUT.TXT выведите для летних месяцев значение «Summer», для зимних – «Winter», для весенних – «Spring», для осенних – «Autumn». Если число не соответствует возможному значению месяца, то в этом случае следует вывести «Error». 
+
+const fs = require('fs');
+const input = fs.readFileSync('input.txt', 'binary');
+const [a] = input.trim().split(/\s+/).map(Number);
+let res;
+if (a === 1 || a === 2 || a === 12) {
+    res = 'Winter';
+} else if (a === 3 || a === 4 || a === 5) {
+    res = 'Spring';
+} else if (a === 6 || a === 7 || a === 8) {
+    res = 'Summer';
+} else if (a === 9 || a === 10 || a === 11) {
+    res = 'Autumn';
+} else {
+    res = 'Error';
+}
+ 
+fs.writeFileSync('output.txt', `${res}`);
